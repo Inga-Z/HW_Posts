@@ -5,10 +5,11 @@ const rootEl = document.getElementById('root');
 console.log(rootEl);
 
 const post = {
-    id: 999,
-    content: 'Первый пост в моей соц.сети',
-    imageUrl: 'https://placekitten.com/300/300',
-    likes: 6,
+    id: 1,
+    content: 'Кошка',
+    imageUrl: 'https://placekitten.com/200/200',
+    likes: 1,
+    dislikes: 1,
 };
 
 const postEl = document.createElement('div');
@@ -27,7 +28,7 @@ const postContentEl = document.createElement('p');
 postContentEl.textContent = post.content;
 postBodyEl.appendChild(postContentEl);
 
-const likesEl = document.createElement('button');
+const likesEl = document.createElement('button-liks');
 likesEl.className = 'btn btn-primary';
 likesEl.textContent = '❤ ' + post.likes;
 
@@ -36,7 +37,18 @@ likesEl.onclick = function () {
     likesEl.textContent = '❤ ' + post.likes;
 };
 
+const dislikesEl = document.createElement('button-dislikes');
+dislikesEl.className = 'btn btn-primary';
+dislikesEl.textContent = '👎' + post.dislikes;
+
+dislikesEl.onclick = function () {
+    post.dislikes = post.dislikes + 1;
+    dislikesEl.textContent = '👎 ' + post.dislikes;
+};
+
 postBodyEl.appendChild(likesEl);
+
+postBodyEl.appendChild(dislikesEl);
 
 rootEl.appendChild(postEl);
 
