@@ -52,4 +52,11 @@ postBodyEl.appendChild(dislikesEl);
 
 rootEl.appendChild(postEl);
 
+const videoEl = document.createElement('video');
+videoEl.controls = true;
+rootEl.appendChild(videoEl);
 
+
+const audioEl = document.createElement('audio');
+audioEl.controls = true;
+rootEl.appendChild(audioEl);
